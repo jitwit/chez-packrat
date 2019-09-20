@@ -31,6 +31,9 @@
 ;;
 #!r6rs
 
+(eval-when (compile)
+  (optimize-level 3))
+
 (library (chez json)
   (export json-write
 	  json-read)

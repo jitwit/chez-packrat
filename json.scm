@@ -69,7 +69,7 @@
 	     (number? x)) (write x p))
 	((boolean? x) (display (if x "true" "false") p))
 	((symbol? x) (write (if (eq? x 'null) 'null (symbol->string x))
-			    p)y) ;; for convenience
+			    p)) ;; for convenience
 	((null? x) (display "null" p))
 	((and (list? x)
 	      (pair? (car x))
@@ -153,7 +153,7 @@
 			   ((n <- jnumber) n)
 			   ((white (token "true")) #t)
 			   ((white (token "false")) #f)
-			   ((white (token "null")) 'null))
+			   ((white (token "null")) '()))
 		      (comment (((token "/*") b <- comment-body) b)
 			       (((token "//") b <- skip-to-newline) b)
 			       (() 'whitespace))
