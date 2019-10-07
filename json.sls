@@ -31,22 +31,19 @@
 ;;
 #!r6rs
 
-(eval-when (compile)
-  (optimize-level 3))
-
 (library (chez json)
   (export json-write
 	  json-read)
   
   (import
-    (except (rnrs) define-record-type error)
-    (rnrs r5rs)
-    (rnrs mutable-pairs)
-    (only (srfi :1 lists) lset-union append-map fold)
-    (srfi :6 basic-string-ports)
-    (srfi :9 records)
-    (srfi :23 error)
-    (only (chezscheme) include hash-table? hashtable-cells))
+   (except (rnrs) define-record-type error)
+   (rnrs r5rs)
+   (rnrs mutable-pairs)
+   (only (srfi :1 lists) lset-union append-map fold)
+   (srfi :6 basic-string-ports)
+   (srfi :9 records)
+   (srfi :23 error)
+   (only (chezscheme) include hash-table? hashtable-cells))
 
   (include "packrat.scm")
   (include "json.scm")

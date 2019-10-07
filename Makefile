@@ -12,8 +12,8 @@ chezversion ::= $(shell echo '(call-with-values scheme-version-number (lambda (a
 schemedir = ${LIBDIR}/csv${chezversion}-site
 
 build:
-	echo "(compile-library \"chez/packrat.sls\")" | ${CHEZ} -q
-	echo "(compile-library \"chez/json.sls\")" | ${CHEZ} -q
+	echo "(compile-library \"packrat.sls\")" | ${CHEZ} -q
+	echo "(compile-library \"json.sls\")" | ${CHEZ} -q
 
 install:
 	find . -type f -regex ".*.so" -exec sh -c '${INSTALL} -t ${schemedir}/$$(dirname $$1) $$1' _ {} \;
