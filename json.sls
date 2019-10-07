@@ -31,7 +31,7 @@
 ;;
 #!r6rs
 
-(library (chez json)
+(library (json)
   (export json-write
 	  json-read)
   

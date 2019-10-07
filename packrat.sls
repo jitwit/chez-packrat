@@ -1,6 +1,6 @@
 #!r6rs
 
-(library (chez packrat)
+(library (packrat)
   (export parse-result?
           parse-result-successful?
           parse-result-semantic-value
